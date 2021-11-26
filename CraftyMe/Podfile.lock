@@ -52,11 +52,15 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - SwiftMessages (5.0.1):
+    - SwiftMessages/App (= 5.0.1)
+  - SwiftMessages/App (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - IQKeyboardManager
+  - SwiftMessages (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -72,6 +76,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SwiftMessages
 
 SPEC CHECKSUMS:
   Firebase: fb5114cd2bf96e2ff7bcb01d0d9a156cf5fd2f07
@@ -86,7 +91,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  SwiftMessages: 32ce3cfc8388b41aae56ff4853cc752a20101147
 
-PODFILE CHECKSUM: 04686a2a378dbd290100a9b3468ecbe089a399f8
+PODFILE CHECKSUM: 07fd0436723dab3e5f32704501ec143bfd094254
 
 COCOAPODS: 1.11.2

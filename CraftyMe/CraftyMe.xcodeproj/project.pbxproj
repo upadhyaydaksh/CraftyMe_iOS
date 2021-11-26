@@ -10,21 +10,53 @@
 		450A1F0C1145287B7FC10254 /* Pods_CraftyMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE640EF1E1C1E6FCE1F77171 /* Pods_CraftyMe.framework */; };
 		520F5A4E2749A84900677E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F5A4D2749A84900677E02 /* AppDelegate.swift */; };
 		520F5A502749A84900677E02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F5A4F2749A84900677E02 /* SceneDelegate.swift */; };
-		520F5A522749A84900677E02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F5A512749A84900677E02 /* ViewController.swift */; };
 		520F5A552749A84900677E02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520F5A532749A84900677E02 /* Main.storyboard */; };
 		520F5A572749A84C00677E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520F5A562749A84C00677E02 /* Assets.xcassets */; };
 		520F5A5A2749A84C00677E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520F5A582749A84C00677E02 /* LaunchScreen.storyboard */; };
+		5213049F275183EA0075540C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5213049E275183EA0075540C /* Helper.swift */; };
+		521304AA275184010075540C /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A1275184010075540C /* Messages.swift */; };
+		521304AB275184020075540C /* DULabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A2275184010075540C /* DULabel.swift */; };
+		521304AC275184020075540C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A3275184010075540C /* Constants.swift */; };
+		521304AD275184020075540C /* DUMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A4275184010075540C /* DUMessage.swift */; };
+		521304AE275184020075540C /* DUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A5275184010075540C /* DUButton.swift */; };
+		521304AF275184020075540C /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A6275184010075540C /* FontManager.swift */; };
+		521304B0275184020075540C /* DUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A7275184010075540C /* DUTextField.swift */; };
+		521304B1275184020075540C /* DUNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A8275184010075540C /* DUNavigationController.swift */; };
+		521304B2275184020075540C /* DUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A9275184010075540C /* DUView.swift */; };
+		521304B62751841D0075540C /* String+Attributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304B42751841D0075540C /* String+Attributions.swift */; };
+		521304B72751841D0075540C /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304B52751841D0075540C /* String+Additions.swift */; };
+		521A9D3A27516E680013A864 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3927516E680013A864 /* ProfileVC.swift */; };
+		521A9D3C27516E7D0013A864 /* AddArtworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3B27516E7D0013A864 /* AddArtworkVC.swift */; };
+		521A9D3E27516E8C0013A864 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3D27516E8C0013A864 /* HomeVC.swift */; };
+		521A9D4027516E9B0013A864 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3F27516E9B0013A864 /* SignUpVC.swift */; };
+		521A9D4227516EA90013A864 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D4127516EA90013A864 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		520F5A4A2749A84900677E02 /* CraftyMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CraftyMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		520F5A4D2749A84900677E02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		520F5A4F2749A84900677E02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		520F5A512749A84900677E02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		520F5A542749A84900677E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		520F5A562749A84C00677E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		520F5A592749A84C00677E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		520F5A5B2749A84C00677E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5213049E275183EA0075540C /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		521304A1275184010075540C /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		521304A2275184010075540C /* DULabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DULabel.swift; sourceTree = "<group>"; };
+		521304A3275184010075540C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		521304A4275184010075540C /* DUMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUMessage.swift; sourceTree = "<group>"; };
+		521304A5275184010075540C /* DUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUButton.swift; sourceTree = "<group>"; };
+		521304A6275184010075540C /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		521304A7275184010075540C /* DUTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUTextField.swift; sourceTree = "<group>"; };
+		521304A8275184010075540C /* DUNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUNavigationController.swift; sourceTree = "<group>"; };
+		521304A9275184010075540C /* DUView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUView.swift; sourceTree = "<group>"; };
+		521304B42751841D0075540C /* String+Attributions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attributions.swift"; sourceTree = "<group>"; };
+		521304B52751841D0075540C /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		521A9D3927516E680013A864 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		521A9D3B27516E7D0013A864 /* AddArtworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtworkVC.swift; sourceTree = "<group>"; };
+		521A9D3D27516E8C0013A864 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		521A9D3F27516E9B0013A864 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		521A9D4127516EA90013A864 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5B0AD373EA53807706D6133E /* Pods-CraftyMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CraftyMe.debug.xcconfig"; path = "Target Support Files/Pods-CraftyMe/Pods-CraftyMe.debug.xcconfig"; sourceTree = "<group>"; };
 		DB9ACC75BEDBB75DAD214A06 /* Pods-CraftyMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CraftyMe.release.xcconfig"; path = "Target Support Files/Pods-CraftyMe/Pods-CraftyMe.release.xcconfig"; sourceTree = "<group>"; };
 		DE640EF1E1C1E6FCE1F77171 /* Pods_CraftyMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CraftyMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,9 +103,11 @@
 		520F5A4C2749A84900677E02 /* CraftyMe */ = {
 			isa = PBXGroup;
 			children = (
+				521A9D3327516AE30013A864 /* Models */,
+				521A9D3227516A4E0013A864 /* Helpers */,
+				521A9D3127516A2D0013A864 /* Controllers */,
 				520F5A4D2749A84900677E02 /* AppDelegate.swift */,
 				520F5A4F2749A84900677E02 /* SceneDelegate.swift */,
-				520F5A512749A84900677E02 /* ViewController.swift */,
 				520F5A532749A84900677E02 /* Main.storyboard */,
 				520F5A562749A84C00677E02 /* Assets.xcassets */,
 				520F5A582749A84C00677E02 /* LaunchScreen.storyboard */,
@@ -82,13 +116,106 @@
 			path = CraftyMe;
 			sourceTree = "<group>";
 		};
+		521304A0275183F00075540C /* CommonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				521304A3275184010075540C /* Constants.swift */,
+				521304A6275184010075540C /* FontManager.swift */,
+				521304A5275184010075540C /* DUButton.swift */,
+				521304A2275184010075540C /* DULabel.swift */,
+				521304A4275184010075540C /* DUMessage.swift */,
+				521304A8275184010075540C /* DUNavigationController.swift */,
+				521304A7275184010075540C /* DUTextField.swift */,
+				521304A9275184010075540C /* DUView.swift */,
+				521304A1275184010075540C /* Messages.swift */,
+			);
+			path = CommonFiles;
+			sourceTree = "<group>";
+		};
+		521304B3275184130075540C /* String */ = {
+			isa = PBXGroup;
+			children = (
+				521304B52751841D0075540C /* String+Additions.swift */,
+				521304B42751841D0075540C /* String+Attributions.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		521A9D3127516A2D0013A864 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				521A9D3827516E2E0013A864 /* ProfileVC */,
+				521A9D3727516E1D0013A864 /* AddArtworkVC */,
+				521A9D3627516E130013A864 /* HomeVC */,
+				521A9D3527516E0B0013A864 /* SignUpVC */,
+				521A9D3427516DFB0013A864 /* LoginVC */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		521A9D3227516A4E0013A864 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				521304B3275184130075540C /* String */,
+				521304A0275183F00075540C /* CommonFiles */,
+				5213049E275183EA0075540C /* Helper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		521A9D3327516AE30013A864 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		521A9D3427516DFB0013A864 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				521A9D4127516EA90013A864 /* LoginVC.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		521A9D3527516E0B0013A864 /* SignUpVC */ = {
+			isa = PBXGroup;
+			children = (
+				521A9D3F27516E9B0013A864 /* SignUpVC.swift */,
+			);
+			path = SignUpVC;
+			sourceTree = "<group>";
+		};
+		521A9D3627516E130013A864 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				521A9D3D27516E8C0013A864 /* HomeVC.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		521A9D3727516E1D0013A864 /* AddArtworkVC */ = {
+			isa = PBXGroup;
+			children = (
+				521A9D3B27516E7D0013A864 /* AddArtworkVC.swift */,
+			);
+			path = AddArtworkVC;
+			sourceTree = "<group>";
+		};
+		521A9D3827516E2E0013A864 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				521A9D3927516E680013A864 /* ProfileVC.swift */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
 		A8A77792A3966676CA53BF53 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				5B0AD373EA53807706D6133E /* Pods-CraftyMe.debug.xcconfig */,
 				DB9ACC75BEDBB75DAD214A06 /* Pods-CraftyMe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,9 +334,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520F5A522749A84900677E02 /* ViewController.swift in Sources */,
+				521304B1275184020075540C /* DUNavigationController.swift in Sources */,
+				521304AD275184020075540C /* DUMessage.swift in Sources */,
+				521A9D4027516E9B0013A864 /* SignUpVC.swift in Sources */,
+				521304AF275184020075540C /* FontManager.swift in Sources */,
+				521304AC275184020075540C /* Constants.swift in Sources */,
+				521304AA275184010075540C /* Messages.swift in Sources */,
+				521A9D3C27516E7D0013A864 /* AddArtworkVC.swift in Sources */,
+				521304AE275184020075540C /* DUButton.swift in Sources */,
+				521304B0275184020075540C /* DUTextField.swift in Sources */,
+				521A9D4227516EA90013A864 /* LoginVC.swift in Sources */,
+				521304B62751841D0075540C /* String+Attributions.swift in Sources */,
+				521A9D3A27516E680013A864 /* ProfileVC.swift in Sources */,
+				521304B72751841D0075540C /* String+Additions.swift in Sources */,
+				521A9D3E27516E8C0013A864 /* HomeVC.swift in Sources */,
 				520F5A4E2749A84900677E02 /* AppDelegate.swift in Sources */,
+				521304AB275184020075540C /* DULabel.swift in Sources */,
 				520F5A502749A84900677E02 /* SceneDelegate.swift in Sources */,
+				5213049F275183EA0075540C /* Helper.swift in Sources */,
+				521304B2275184020075540C /* DUView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
