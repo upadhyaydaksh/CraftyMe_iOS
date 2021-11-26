@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450A1F0C1145287B7FC10254 /* Pods_CraftyMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE640EF1E1C1E6FCE1F77171 /* Pods_CraftyMe.framework */; };
 		520F5A4E2749A84900677E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F5A4D2749A84900677E02 /* AppDelegate.swift */; };
 		520F5A502749A84900677E02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F5A4F2749A84900677E02 /* SceneDelegate.swift */; };
 		520F5A522749A84900677E02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F5A512749A84900677E02 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		520F5A562749A84C00677E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		520F5A592749A84C00677E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		520F5A5B2749A84C00677E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B0AD373EA53807706D6133E /* Pods-CraftyMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CraftyMe.debug.xcconfig"; path = "Target Support Files/Pods-CraftyMe/Pods-CraftyMe.debug.xcconfig"; sourceTree = "<group>"; };
+		DB9ACC75BEDBB75DAD214A06 /* Pods-CraftyMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CraftyMe.release.xcconfig"; path = "Target Support Files/Pods-CraftyMe/Pods-CraftyMe.release.xcconfig"; sourceTree = "<group>"; };
+		DE640EF1E1C1E6FCE1F77171 /* Pods_CraftyMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CraftyMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450A1F0C1145287B7FC10254 /* Pods_CraftyMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B449F01CAA69283467E1670 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE640EF1E1C1E6FCE1F77171 /* Pods_CraftyMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		520F5A412749A84900677E02 = {
 			isa = PBXGroup;
 			children = (
 				520F5A4C2749A84900677E02 /* CraftyMe */,
 				520F5A4B2749A84900677E02 /* Products */,
+				A8A77792A3966676CA53BF53 /* Pods */,
+				2B449F01CAA69283467E1670 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = CraftyMe;
 			sourceTree = "<group>";
 		};
+		A8A77792A3966676CA53BF53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B0AD373EA53807706D6133E /* Pods-CraftyMe.debug.xcconfig */,
+				DB9ACC75BEDBB75DAD214A06 /* Pods-CraftyMe.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 520F5A5E2749A84C00677E02 /* Build configuration list for PBXNativeTarget "CraftyMe" */;
 			buildPhases = (
+				33A3CE0A1E7E6E7892FA589F /* [CP] Check Pods Manifest.lock */,
 				520F5A462749A84900677E02 /* Sources */,
 				520F5A472749A84900677E02 /* Frameworks */,
 				520F5A482749A84900677E02 /* Resources */,
+				3E154E08A776972D41BF026A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33A3CE0A1E7E6E7892FA589F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CraftyMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E154E08A776972D41BF026A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CraftyMe/Pods-CraftyMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CraftyMe/Pods-CraftyMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CraftyMe/Pods-CraftyMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		520F5A462749A84900677E02 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		520F5A5F2749A84C00677E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B0AD373EA53807706D6133E /* Pods-CraftyMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +383,7 @@
 		};
 		520F5A602749A84C00677E02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB9ACC75BEDBB75DAD214A06 /* Pods-CraftyMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
