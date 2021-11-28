@@ -31,7 +31,8 @@ class LoginVC: DUBaseVC {
     }
     
     @IBAction func btnSignUpAction(_ sender: Any) {
-        
+        let obj = SignUpVC.instantiate()
+        self.push(vc: obj)
     }
     
 

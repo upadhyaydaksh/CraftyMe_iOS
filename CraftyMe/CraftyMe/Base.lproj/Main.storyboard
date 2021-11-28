@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sv3-M3-IZK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tpu-bb-QML">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -380,12 +380,29 @@
                                     <outlet property="delegate" destination="sv3-M3-IZK" id="ghU-nL-f5n"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tl5-RT-NF0">
+                                <rect key="frame" x="232" y="480" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="IAy-Oh-EPr"/>
+                                    <constraint firstAttribute="height" constant="64" id="KiG-eT-xtz"/>
+                                </constraints>
+                                <color key="tintColor" red="0.2352941036" green="0.1019607931" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="ic_plus" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnAddAction:" destination="sv3-M3-IZK" eventType="touchUpInside" id="bvE-nb-Xj8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6OV-OZ-vwe"/>
                         <color key="backgroundColor" red="0.95119654170000001" green="0.86991637720000003" blue="0.47477614699999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="nBX-xP-9vG" firstAttribute="leading" secondItem="Mig-F3-P7n" secondAttribute="leading" id="Fba-DD-602"/>
                             <constraint firstItem="6OV-OZ-vwe" firstAttribute="trailing" secondItem="xTw-nT-bsD" secondAttribute="trailing" id="Lel-I4-6bc"/>
+                            <constraint firstItem="6OV-OZ-vwe" firstAttribute="trailing" secondItem="Tl5-RT-NF0" secondAttribute="trailing" constant="24" id="LuW-aR-fd5"/>
+                            <constraint firstItem="6OV-OZ-vwe" firstAttribute="bottom" secondItem="Tl5-RT-NF0" secondAttribute="bottom" constant="24" id="RzB-B7-VXK"/>
                             <constraint firstItem="nBX-xP-9vG" firstAttribute="top" secondItem="6OV-OZ-vwe" secondAttribute="top" id="UAU-PV-23M"/>
                             <constraint firstItem="xTw-nT-bsD" firstAttribute="top" secondItem="nBX-xP-9vG" secondAttribute="bottom" id="YWy-DA-XZT"/>
                             <constraint firstItem="xTw-nT-bsD" firstAttribute="leading" secondItem="6OV-OZ-vwe" secondAttribute="leading" id="f8h-4Q-l1Z"/>
@@ -825,7 +842,7 @@
         <!--Navigation Controller-->
         <scene sceneID="98h-Zi-KEw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="tpu-bb-QML" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="tpu-bb-QML" customClass="NavigationController" customModule="CraftyMe" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dhH-e0-Kvr">
                         <autoresizingMask key="autoresizingMask"/>
@@ -902,6 +919,7 @@
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="ic_plus" width="50" height="50"/>
         <image name="logo" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

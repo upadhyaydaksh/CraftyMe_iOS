@@ -16,11 +16,15 @@ class AddArtworkVC: DUBaseVC {
     @IBOutlet weak var txtCreatedDate: DUTextField!
     @IBOutlet weak var lblTitle: UILabel!
     
-
+    var isFromHome : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if isFromHome {
+            self.lblTitle.text = "Update"
+        } else {
+            self.lblTitle.text = "Add Artwork"
+        }
     }
     
 
@@ -43,7 +47,7 @@ class AddArtworkVC: DUBaseVC {
     }
     
     @IBAction func btnGoBackAction(_ sender: Any) {
-        
+        self.goBack()
     }
     
     

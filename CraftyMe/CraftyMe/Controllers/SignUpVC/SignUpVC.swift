@@ -34,7 +34,7 @@ class SignUpVC: DUBaseVC {
     }
     
     @IBAction func btnGoBackAction(_ sender: Any) {
-        
+        self.goBack()
     }
     
     

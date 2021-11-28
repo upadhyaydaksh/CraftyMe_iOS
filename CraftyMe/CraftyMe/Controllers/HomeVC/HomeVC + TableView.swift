@@ -20,5 +20,10 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let obj = AddArtworkVC.instantiate()
+        obj.isFromHome = true
+        self.push(vc: obj)
+    }
     
 }

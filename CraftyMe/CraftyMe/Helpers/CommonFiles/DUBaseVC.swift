@@ -18,7 +18,7 @@ class DUBaseVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func popVC() {
+    func goBack() {
         self.navigationController?.popViewController(animated: true)
     }
     

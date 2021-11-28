@@ -27,5 +27,12 @@ class HomeVC: DUBaseVC {
         self.tableView.register(UINib(nibName: HomeTableViewCell.reUserIdentifier(), bundle: nil), forCellReuseIdentifier: HomeTableViewCell.reUserIdentifier())
     }
     
+    //MARK: - Actions
+    @IBAction func btnAddAction(_ sender: Any) {
+        let obj = AddArtworkVC.instantiate()
+        self.push(vc: obj)
+    }
+    
+    
 
 }

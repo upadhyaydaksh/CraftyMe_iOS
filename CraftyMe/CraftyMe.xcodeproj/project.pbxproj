@@ -25,11 +25,15 @@
 		521304B2275184020075540C /* DUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304A9275184010075540C /* DUView.swift */; };
 		521304B62751841D0075540C /* String+Attributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304B42751841D0075540C /* String+Attributions.swift */; };
 		521304B72751841D0075540C /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521304B52751841D0075540C /* String+Additions.swift */; };
+		5214EA002753488A006F660D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214E9FF2753488A006F660D /* NavigationController.swift */; };
+		5214EA0227534ACF006F660D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214EA0127534ACF006F660D /* UserManager.swift */; };
 		521A9D3A27516E680013A864 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3927516E680013A864 /* ProfileVC.swift */; };
 		521A9D3C27516E7D0013A864 /* AddArtworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3B27516E7D0013A864 /* AddArtworkVC.swift */; };
 		521A9D3E27516E8C0013A864 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3D27516E8C0013A864 /* HomeVC.swift */; };
 		521A9D4027516E9B0013A864 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3F27516E9B0013A864 /* SignUpVC.swift */; };
 		521A9D4227516EA90013A864 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D4127516EA90013A864 /* LoginVC.swift */; };
+		526079D427534D8800C63091 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526079D327534D8800C63091 /* User.swift */; };
+		526079D727534EF000C63091 /* AppDelegate + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526079D627534EF000C63091 /* AppDelegate + Additions.swift */; };
 		52F3F38C275311E000E6BA18 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F38A275311E000E6BA18 /* HomeTableViewCell.swift */; };
 		52F3F38D275311E000E6BA18 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F3F38B275311E000E6BA18 /* HomeTableViewCell.xib */; };
 		52F3F38F27531B6400E6BA18 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */; };
@@ -56,11 +60,15 @@
 		521304A9275184010075540C /* DUView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUView.swift; sourceTree = "<group>"; };
 		521304B42751841D0075540C /* String+Attributions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attributions.swift"; sourceTree = "<group>"; };
 		521304B52751841D0075540C /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		5214E9FF2753488A006F660D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		5214EA0127534ACF006F660D /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		521A9D3927516E680013A864 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		521A9D3B27516E7D0013A864 /* AddArtworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtworkVC.swift; sourceTree = "<group>"; };
 		521A9D3D27516E8C0013A864 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		521A9D3F27516E9B0013A864 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		521A9D4127516EA90013A864 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		526079D327534D8800C63091 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		526079D627534EF000C63091 /* AppDelegate + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Additions.swift"; sourceTree = "<group>"; };
 		52F3F38A275311E000E6BA18 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		52F3F38B275311E000E6BA18 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + TableView.swift"; sourceTree = "<group>"; };
@@ -111,11 +119,10 @@
 		520F5A4C2749A84900677E02 /* CraftyMe */ = {
 			isa = PBXGroup;
 			children = (
+				526079D527534EE000C63091 /* AppDelegate */,
 				521A9D3327516AE30013A864 /* Models */,
 				521A9D3227516A4E0013A864 /* Helpers */,
 				521A9D3127516A2D0013A864 /* Controllers */,
-				520F5A4D2749A84900677E02 /* AppDelegate.swift */,
-				520F5A4F2749A84900677E02 /* SceneDelegate.swift */,
 				520F5A532749A84900677E02 /* Main.storyboard */,
 				520F5A562749A84C00677E02 /* Assets.xcassets */,
 				520F5A582749A84C00677E02 /* LaunchScreen.storyboard */,
@@ -137,6 +144,7 @@
 				521304A9275184010075540C /* DUView.swift */,
 				521304A1275184010075540C /* Messages.swift */,
 				52F3F39027531F7600E6BA18 /* DUBaseVC.swift */,
+				5214EA0127534ACF006F660D /* UserManager.swift */,
 			);
 			path = CommonFiles;
 			sourceTree = "<group>";
@@ -150,9 +158,18 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		5214E9FE27534869006F660D /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				5214E9FF2753488A006F660D /* NavigationController.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
 		521A9D3127516A2D0013A864 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5214E9FE27534869006F660D /* NavigationController */,
 				521A9D3827516E2E0013A864 /* ProfileVC */,
 				521A9D3727516E1D0013A864 /* AddArtworkVC */,
 				521A9D3627516E130013A864 /* HomeVC */,
@@ -175,6 +192,7 @@
 		521A9D3327516AE30013A864 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				526079D327534D8800C63091 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +237,17 @@
 				521A9D3927516E680013A864 /* ProfileVC.swift */,
 			);
 			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		526079D527534EE000C63091 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				520F5A4D2749A84900677E02 /* AppDelegate.swift */,
+				520F5A4F2749A84900677E02 /* SceneDelegate.swift */,
+				526079D627534EF000C63091 /* AppDelegate + Additions.swift */,
+			);
+			name = AppDelegate;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		52F3F3892753118200E6BA18 /* HomeTableViewCell */ = {
@@ -355,12 +384,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526079D727534EF000C63091 /* AppDelegate + Additions.swift in Sources */,
 				521304B1275184020075540C /* DUNavigationController.swift in Sources */,
 				521304AD275184020075540C /* DUMessage.swift in Sources */,
 				521A9D4027516E9B0013A864 /* SignUpVC.swift in Sources */,
+				526079D427534D8800C63091 /* User.swift in Sources */,
 				521304AF275184020075540C /* FontManager.swift in Sources */,
 				521304AC275184020075540C /* Constants.swift in Sources */,
 				521304AA275184010075540C /* Messages.swift in Sources */,
+				5214EA0227534ACF006F660D /* UserManager.swift in Sources */,
 				52F3F38C275311E000E6BA18 /* HomeTableViewCell.swift in Sources */,
 				521A9D3C27516E7D0013A864 /* AddArtworkVC.swift in Sources */,
 				521304AE275184020075540C /* DUButton.swift in Sources */,
@@ -370,6 +402,7 @@
 				521A9D3A27516E680013A864 /* ProfileVC.swift in Sources */,
 				521304B72751841D0075540C /* String+Additions.swift in Sources */,
 				521A9D3E27516E8C0013A864 /* HomeVC.swift in Sources */,
+				5214EA002753488A006F660D /* NavigationController.swift in Sources */,
 				520F5A4E2749A84900677E02 /* AppDelegate.swift in Sources */,
 				521304AB275184020075540C /* DULabel.swift in Sources */,
 				520F5A502749A84900677E02 /* SceneDelegate.swift in Sources */,

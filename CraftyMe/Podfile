@@ -11,5 +11,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'IQKeyboardManager'
 pod 'SwiftMessages', '~> 5.0'
+pod 'SVProgressHUD'
+pod 'ObjectMapper'
 
 end
