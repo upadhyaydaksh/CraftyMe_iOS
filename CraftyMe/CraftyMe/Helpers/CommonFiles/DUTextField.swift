@@ -26,13 +26,13 @@ enum TextFieldInputType {
 }
 
 @objc protocol DUTextFieldDelegate {
-    @objc optional func textFieldDidEndEditing(_ textField: HMTextField)
-    @objc optional func textField(_ textField: HMTextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
-    @objc optional func myTextFieldDidChange(_ textField: HMTextField)
+    @objc optional func textFieldDidEndEditing(_ textField: DUTextField)
+    @objc optional func textField(_ textField: DUTextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
+    @objc optional func myTextFieldDidChange(_ textField: DUTextField)
 }
 
 @IBDesignable
-class HMTextField: UITextField, UITextFieldDelegate {
+class DUTextField: UITextField, UITextFieldDelegate {
     
     var hsDelegate: DUTextFieldDelegate?
 
@@ -67,6 +67,29 @@ class HMTextField: UITextField, UITextFieldDelegate {
                 self.leftViewMode = .always
                 
                 padding = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
+            }
+            
+            self.layoutIfNeeded()
+        }
+    }
+    
+    @IBInspectable var rightViewImage: UIImage? = nil {
+        didSet {
+            if leftViewImage == nil {
+                self.leftView = nil
+                padding = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+            } else {
+                let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+                let imageView = UIImageView(image: rightViewImage)
+                imageView.contentMode = .scaleAspectFit
+                view.addSubview(imageView)
+                imageView.frame = view.bounds
+                imageView.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+                view.backgroundColor = UIColor.clear
+                self.leftView = view
+                self.leftViewMode = .always
+                
+                padding = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 40)
             }
             
             self.layoutIfNeeded()

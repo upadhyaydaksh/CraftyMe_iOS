@@ -7,8 +7,13 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: DUBaseVC {
 
+    //MARK: - Outlets
+    @IBOutlet weak var txtEmail: DUTextField!
+    @IBOutlet weak var txtPassword: DUTextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +21,18 @@ class LoginVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    class func instantiate() -> LoginVC {
+        return UIStoryboard.main().instantiateViewController(identifier: LoginVC.identifier()) as! LoginVC
     }
-    */
+    
+    //MARK: - Actions
+    @IBAction func btnLoginAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func btnSignUpAction(_ sender: Any) {
+        
+    }
+    
 
 }

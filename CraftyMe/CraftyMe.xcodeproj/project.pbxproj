@@ -30,6 +30,10 @@
 		521A9D3E27516E8C0013A864 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3D27516E8C0013A864 /* HomeVC.swift */; };
 		521A9D4027516E9B0013A864 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D3F27516E9B0013A864 /* SignUpVC.swift */; };
 		521A9D4227516EA90013A864 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D4127516EA90013A864 /* LoginVC.swift */; };
+		52F3F38C275311E000E6BA18 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F38A275311E000E6BA18 /* HomeTableViewCell.swift */; };
+		52F3F38D275311E000E6BA18 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F3F38B275311E000E6BA18 /* HomeTableViewCell.xib */; };
+		52F3F38F27531B6400E6BA18 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */; };
+		52F3F39127531F7600E6BA18 /* DUBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F39027531F7600E6BA18 /* DUBaseVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,10 @@
 		521A9D3D27516E8C0013A864 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		521A9D3F27516E9B0013A864 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		521A9D4127516EA90013A864 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		52F3F38A275311E000E6BA18 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		52F3F38B275311E000E6BA18 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + TableView.swift"; sourceTree = "<group>"; };
+		52F3F39027531F7600E6BA18 /* DUBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DUBaseVC.swift; sourceTree = "<group>"; };
 		5B0AD373EA53807706D6133E /* Pods-CraftyMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CraftyMe.debug.xcconfig"; path = "Target Support Files/Pods-CraftyMe/Pods-CraftyMe.debug.xcconfig"; sourceTree = "<group>"; };
 		DB9ACC75BEDBB75DAD214A06 /* Pods-CraftyMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CraftyMe.release.xcconfig"; path = "Target Support Files/Pods-CraftyMe/Pods-CraftyMe.release.xcconfig"; sourceTree = "<group>"; };
 		DE640EF1E1C1E6FCE1F77171 /* Pods_CraftyMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CraftyMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +136,7 @@
 				521304A7275184010075540C /* DUTextField.swift */,
 				521304A9275184010075540C /* DUView.swift */,
 				521304A1275184010075540C /* Messages.swift */,
+				52F3F39027531F7600E6BA18 /* DUBaseVC.swift */,
 			);
 			path = CommonFiles;
 			sourceTree = "<group>";
@@ -189,7 +198,9 @@
 		521A9D3627516E130013A864 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				52F3F3892753118200E6BA18 /* HomeTableViewCell */,
 				521A9D3D27516E8C0013A864 /* HomeVC.swift */,
+				52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -208,6 +219,15 @@
 				521A9D3927516E680013A864 /* ProfileVC.swift */,
 			);
 			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		52F3F3892753118200E6BA18 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				52F3F38A275311E000E6BA18 /* HomeTableViewCell.swift */,
+				52F3F38B275311E000E6BA18 /* HomeTableViewCell.xib */,
+			);
+			path = HomeTableViewCell;
 			sourceTree = "<group>";
 		};
 		A8A77792A3966676CA53BF53 /* Pods */ = {
@@ -281,6 +301,7 @@
 			files = (
 				520F5A5A2749A84C00677E02 /* LaunchScreen.storyboard in Resources */,
 				520F5A572749A84C00677E02 /* Assets.xcassets in Resources */,
+				52F3F38D275311E000E6BA18 /* HomeTableViewCell.xib in Resources */,
 				520F5A552749A84900677E02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +361,7 @@
 				521304AF275184020075540C /* FontManager.swift in Sources */,
 				521304AC275184020075540C /* Constants.swift in Sources */,
 				521304AA275184010075540C /* Messages.swift in Sources */,
+				52F3F38C275311E000E6BA18 /* HomeTableViewCell.swift in Sources */,
 				521A9D3C27516E7D0013A864 /* AddArtworkVC.swift in Sources */,
 				521304AE275184020075540C /* DUButton.swift in Sources */,
 				521304B0275184020075540C /* DUTextField.swift in Sources */,
@@ -351,7 +373,9 @@
 				520F5A4E2749A84900677E02 /* AppDelegate.swift in Sources */,
 				521304AB275184020075540C /* DULabel.swift in Sources */,
 				520F5A502749A84900677E02 /* SceneDelegate.swift in Sources */,
+				52F3F39127531F7600E6BA18 /* DUBaseVC.swift in Sources */,
 				5213049F275183EA0075540C /* Helper.swift in Sources */,
+				52F3F38F27531B6400E6BA18 /* HomeVC + TableView.swift in Sources */,
 				521304B2275184020075540C /* DUView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

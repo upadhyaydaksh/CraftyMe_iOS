@@ -7,7 +7,12 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class ProfileVC: DUBaseVC {
+    
+    //MARK: - Outlets
+    @IBOutlet weak var txtFirstName: DUTextField!
+    @IBOutlet weak var txtLastName: DUTextField!
+    @IBOutlet weak var txtEmail: DUTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,15 +20,22 @@ class ProfileVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    class func instantiate() -> ProfileVC {
+        return UIStoryboard.main().instantiateViewController(identifier: ProfileVC.identifier()) as! ProfileVC
     }
-    */
-
+    
+    //MARK: - Actions
+    @IBAction func btnImageAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func btnSaveAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func btnLogoutAction(_ sender: Any) {
+        
+    }
+    
+    
 }
