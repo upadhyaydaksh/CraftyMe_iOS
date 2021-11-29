@@ -16,20 +16,23 @@ class ProfileVC: DUBaseVC {
     @IBOutlet weak var txtFirstName: DUTextField!
     @IBOutlet weak var txtLastName: DUTextField!
     @IBOutlet weak var txtEmail: DUTextField!
+    
     var imagePicker = UIImagePickerController()
-    
     var profileImage: UIImage?
-    
+    var user: User = User()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.user = UserManager.sharedManager().activeUser
+        self.txtEmail.text = self.user.email
+        self.txtFirstName.text = self.user.firstName
+        self.txtLastName.text = self.user.lastName
     }    
     
     //MARK: - Actions
     @IBAction func btnBackAction(_ sender: Any) {
         self.goBack()
+        
     }
     
     @IBAction func btnImageAction(_ sender: Any) {
@@ -60,7 +63,7 @@ class ProfileVC: DUBaseVC {
         }
     
     @IBAction func btnSaveAction(_ sender: Any) {
-        
+        self.updateUser()
     }
     
     @IBAction func btnLogoutAction(_ sender: Any) {
@@ -71,6 +74,18 @@ class ProfileVC: DUBaseVC {
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func updateUser() {
+        self.firebaseRef.child("users").child(self.user.id!).setValue([
+            "id": self.user.id,
+            "firstName" : self.txtFirstName.text!,
+            "lastName" : self.txtLastName.text!,
+            "email" : self.user.email
+        ])
+        let user = User(id: self.user.id, firstName: self.txtFirstName.text, lastName: self.txtLastName.text, email: self.user.email, profilePicture: "")
+        UserManager.sharedManager().activeUser = user
+    }
+    
     func showLogoutConfirmation() {
         let alert = UIAlertController(title: "Logout", message: kAreYouSureToLogout, preferredStyle: .alert)
         
