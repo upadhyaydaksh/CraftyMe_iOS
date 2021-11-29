@@ -29,6 +29,10 @@ class HomeVC: DUBaseVC {
         self.push(vc: obj)
     }
     
+    @IBAction func btnProfileAction(_ sender: Any) {
+        let obj = ProfileVC.instantiate()
+        self.push(vc: obj)
+    }
     
 
 }

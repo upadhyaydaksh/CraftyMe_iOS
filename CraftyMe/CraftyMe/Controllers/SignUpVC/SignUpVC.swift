@@ -55,6 +55,8 @@ extension SignUpVC{
                         "lastName" : self.txtLastName.text!,
                         "email" : self.txtEmail.text!
                     ])
+                    let user = User(id: user.uid, firstName: self.txtFirstName.text, lastName: self.txtLastName.text, email: self.txtEmail.text, profilePicture: "")
+                    UserManager.sharedManager().activeUser = user
                     completionBlock(true)
                 } else {
                     completionBlock(false)

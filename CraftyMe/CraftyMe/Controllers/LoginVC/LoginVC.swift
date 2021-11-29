@@ -43,13 +43,32 @@ class LoginVC: DUBaseVC {
 }
 
 extension LoginVC{
-    func login(completionBlock: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().signIn(withEmail: self.txtEmail.text!, password: self.txtPassword.text!) { (authResult, error) in
-            if let user = authResult?.user {
-                completionBlock(true)
-            } else {                
-                completionBlock(false)
+    func login( completionBlock: @escaping (_ success: Bool) -> Void) {
+            Auth.auth().signIn(withEmail: self.txtEmail.text!, password: self.txtPassword.text!) { (result, error) in
+                if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
+                    completionBlock(false)
+                } else {
+                    
+                    guard let userID = Auth.auth().currentUser?.uid else { return }
+                    print(userID)
+                    
+                    self.firebaseRef.child("users").child(userID).observeSingleEvent(of: .value, with: { snapshot in
+                        // Get user value
+                        let value = snapshot.value as? NSDictionary
+                        let userId = value?["id"] as? String ?? ""
+                        let firstName = value?["firstName"] as? String ?? ""
+                        let lastName = value?["lastName"] as? String ?? ""
+                        let email = value?["email"] as? String ?? ""
+                                                
+                        let user = User(id: userId, firstName: firstName, lastName: lastName, email: email, profilePicture: "")
+                        UserManager.sharedManager().activeUser = user
+                        
+                    }) { error in
+                        print(error.localizedDescription)
+                    }
+                    
+                    completionBlock(true)
+                }
             }
         }
-    }
 }
