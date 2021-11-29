@@ -18,11 +18,7 @@ class ProfileVC: DUBaseVC {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    class func instantiate() -> ProfileVC {
-        return UIStoryboard.main().instantiateViewController(identifier: ProfileVC.identifier()) as! ProfileVC
-    }
+    }    
     
     //MARK: - Actions
     @IBAction func btnImageAction(_ sender: Any) {

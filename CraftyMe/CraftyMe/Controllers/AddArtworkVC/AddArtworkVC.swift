@@ -27,11 +27,6 @@ class AddArtworkVC: DUBaseVC {
         }
     }
     
-
-    class func instantiate() -> AddArtworkVC {
-        return UIStoryboard.main().instantiateViewController(identifier: AddArtworkVC.identifier()) as! AddArtworkVC
-    }
-    
     //MARK: - Actions
     @IBAction func btnImageAction(_ sender: Any) {
         

@@ -7,12 +7,12 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class DUBaseVC: UIViewController {
     
-    class func identifier() -> String {
-        return String(describing: self)
-    }
+    //MARK: - Class Variables
+    let firebaseRef = Database.database().reference()
     
     func push(vc: UIViewController) {
         self.navigationController?.pushViewController(vc, animated: true)
@@ -22,8 +22,17 @@ class DUBaseVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-//    class func instantiate() -> HomeVC {
-//        return UIStoryboard.main().instantiateViewController(identifier: HomeVC.identifier()) as! HomeVC
-//    }
+    class func instantiate() -> Self {
+        let controller = UIStoryboard.main().instantiateViewController(withIdentifier: String(describing: self))
+        return controller as! Self
+    }
     
+    func showAlertWithMessage(message: String){
+        let alertController = UIAlertController(title: applicationName(), message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            print(message)
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+        
 }

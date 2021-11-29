@@ -34,6 +34,7 @@
 		521A9D4227516EA90013A864 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9D4127516EA90013A864 /* LoginVC.swift */; };
 		526079D427534D8800C63091 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526079D327534D8800C63091 /* User.swift */; };
 		526079D727534EF000C63091 /* AppDelegate + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526079D627534EF000C63091 /* AppDelegate + Additions.swift */; };
+		526FC84E2754472200D5D46B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526FC84D2754472200D5D46B /* GoogleService-Info.plist */; };
 		52F3F38C275311E000E6BA18 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F38A275311E000E6BA18 /* HomeTableViewCell.swift */; };
 		52F3F38D275311E000E6BA18 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F3F38B275311E000E6BA18 /* HomeTableViewCell.xib */; };
 		52F3F38F27531B6400E6BA18 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */; };
@@ -69,6 +70,7 @@
 		521A9D4127516EA90013A864 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		526079D327534D8800C63091 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		526079D627534EF000C63091 /* AppDelegate + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Additions.swift"; sourceTree = "<group>"; };
+		526FC84D2754472200D5D46B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52F3F38A275311E000E6BA18 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		52F3F38B275311E000E6BA18 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + TableView.swift"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				520F5A532749A84900677E02 /* Main.storyboard */,
 				520F5A562749A84C00677E02 /* Assets.xcassets */,
 				520F5A582749A84C00677E02 /* LaunchScreen.storyboard */,
+				526FC84D2754472200D5D46B /* GoogleService-Info.plist */,
 				520F5A5B2749A84C00677E02 /* Info.plist */,
 			);
 			path = CraftyMe;
@@ -330,6 +333,7 @@
 			files = (
 				520F5A5A2749A84C00677E02 /* LaunchScreen.storyboard in Resources */,
 				520F5A572749A84C00677E02 /* Assets.xcassets in Resources */,
+				526FC84E2754472200D5D46B /* GoogleService-Info.plist in Resources */,
 				52F3F38D275311E000E6BA18 /* HomeTableViewCell.xib in Resources */,
 				520F5A552749A84900677E02 /* Main.storyboard in Resources */,
 			);

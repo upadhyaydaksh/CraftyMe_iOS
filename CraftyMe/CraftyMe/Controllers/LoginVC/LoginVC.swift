@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: DUBaseVC {
 
@@ -18,16 +19,19 @@ class LoginVC: DUBaseVC {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-
-    class func instantiate() -> LoginVC {
-        return UIStoryboard.main().instantiateViewController(identifier: LoginVC.identifier()) as! LoginVC
-    }
+    }    
     
     //MARK: - Actions
     @IBAction func btnLoginAction(_ sender: Any) {
-        
+        self.login() { success in
+            if success{
+                let obj = HomeVC.instantiate()
+                self.push(vc: obj)
+            }else{
+                // Error Message
+                self.showAlertWithMessage(message: "Failed to Login. Try Again")
+            }
+        }
     }
     
     @IBAction func btnSignUpAction(_ sender: Any) {
@@ -36,4 +40,16 @@ class LoginVC: DUBaseVC {
     }
     
 
+}
+
+extension LoginVC{
+    func login(completionBlock: @escaping (_ success: Bool) -> Void) {
+        Auth.auth().signIn(withEmail: self.txtEmail.text!, password: self.txtPassword.text!) { (authResult, error) in
+            if let user = authResult?.user {
+                completionBlock(true)
+            } else {                
+                completionBlock(false)
+            }
+        }
+    }
 }

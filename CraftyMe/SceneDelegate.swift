@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             
-            if !UserManager.sharedManager().isUserLoggedIn() {
+            if UserManager.sharedManager().isUserLoggedIn() {
                 // Move to HomeVC
                 let nav: NavigationController = UIStoryboard.main().instantiateViewController(withIdentifier: "NavigationController") as! NavigationController
                 let obj = HomeVC.instantiate()
