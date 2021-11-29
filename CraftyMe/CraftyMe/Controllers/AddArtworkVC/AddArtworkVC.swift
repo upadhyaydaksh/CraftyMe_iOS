@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class AddArtworkVC: DUBaseVC {
     
@@ -15,6 +16,9 @@ class AddArtworkVC: DUBaseVC {
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var txtCreatedDate: DUTextField!
     @IBOutlet weak var lblTitle: UILabel!
+    var imagePicker = UIImagePickerController()
+    
+    var artworkImage: UIImage?
     
     var isFromHome : Bool = false
     
@@ -23,15 +27,37 @@ class AddArtworkVC: DUBaseVC {
         if isFromHome {
             self.lblTitle.text = "Update"
         } else {
-            self.lblTitle.text = "Add Artwork"
+            self.lblTitle.text = "Add"
         }
     }
     
     //MARK: - Actions
-    @IBAction func btnImageAction(_ sender: Any) {
+    @IBAction func btnImgAction(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Upload Photo", message: "Select an option", preferredStyle: .actionSheet)
+                
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            self.selectImage(sourceType: .camera)
+        }))
         
+        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (_) in
+            self.selectImage(sourceType: .photoLibrary)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+            
+        }))
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
+    func selectImage(sourceType: UIImagePickerController.SourceType) {
+            imagePicker.modalPresentationStyle = .fullScreen
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = sourceType
+            imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.modalPresentationStyle = .fullScreen
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     
     @IBAction func btnSaveAction(_ sender: Any) {
         
@@ -46,4 +72,12 @@ class AddArtworkVC: DUBaseVC {
     }
     
     
+}
+
+extension AddArtworkVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.artworkImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
+        self.imgArtwork.image = self.artworkImage
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
