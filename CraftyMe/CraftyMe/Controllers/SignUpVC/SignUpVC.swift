@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpVC: DUBaseVC {
     
@@ -23,20 +24,41 @@ class SignUpVC: DUBaseVC {
         // Do any additional setup after loading the view.
     }
     
-
-    class func instantiate() -> SignUpVC {
-        return UIStoryboard.main().instantiateViewController(identifier: SignUpVC.identifier()) as! SignUpVC
-    }
-    
     //MARK: - Actions
     @IBAction func btnSignUpAction(_ sender: Any) {
-        
+        self.createUser(email: self.txtEmail.text!, password: self.txtPassword.text!) { success in
+            if success{
+                self.goBack()
+            }else{
+                // Error Message
+                self.showAlertWithMessage(message: "Failed to Sign Up. Try Again")
+            }
+        }
     }
     
     @IBAction func btnGoBackAction(_ sender: Any) {
-        
+        self.goBack()
     }
     
     
 
+}
+
+extension SignUpVC{
+    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+            Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
+                if let user = authResult?.user {
+                    print(user)
+                    self.firebaseRef.child("users").child(user.uid).setValue([
+                        "id": user.uid,
+                        "firstName" : self.txtFirstName.text!,
+                        "lastName" : self.txtLastName.text!,
+                        "email" : self.txtEmail.text!
+                    ])
+                    completionBlock(true)
+                } else {
+                    completionBlock(false)
+                }
+            }
+        }
 }

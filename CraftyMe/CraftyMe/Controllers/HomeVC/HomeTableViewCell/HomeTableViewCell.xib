@@ -23,17 +23,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="389" height="274.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvR-Ex-ycI">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvR-Ex-ycI" customClass="DUView" customModule="CraftyMe" customModuleProvider="target">
                         <rect key="frame" x="8" y="8" width="373" height="258.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUH-40-GSg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUH-40-GSg" customClass="DUView" customModule="CraftyMe" customModuleProvider="target">
                                 <rect key="frame" x="4" y="4" width="365" height="168"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wls-dx-77t">
                                         <rect key="frame" x="0.0" y="0.0" width="365" height="168"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="HaD-ae-YDP"/>
                                     <constraint firstAttribute="trailing" secondItem="wls-dx-77t" secondAttribute="trailing" id="Ig5-VT-p3d"/>
@@ -41,6 +41,17 @@
                                     <constraint firstAttribute="bottom" secondItem="wls-dx-77t" secondAttribute="bottom" id="OV8-pa-ysN"/>
                                     <constraint firstItem="wls-dx-77t" firstAttribute="leading" secondItem="sUH-40-GSg" secondAttribute="leading" id="Ok6-1I-NYW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2352941036" green="0.1019607931" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcd-cH-ooC">
                                 <rect key="frame" x="4" y="176" width="365" height="23.5"/>
@@ -77,6 +88,18 @@
                             <constraint firstAttribute="bottom" secondItem="siu-QQ-EdI" secondAttribute="bottom" constant="4" id="xgZ-Wq-b97"/>
                             <constraint firstItem="Lqq-iX-uHB" firstAttribute="top" secondItem="Kcd-cH-ooC" secondAttribute="bottom" constant="4" id="zqE-Py-vRw"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.2352941036" green="0.1019607931" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>

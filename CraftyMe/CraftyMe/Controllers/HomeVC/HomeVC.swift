@@ -19,13 +19,16 @@ class HomeVC: DUBaseVC {
         
     }
     
-    class func instantiate() -> HomeVC {
-        return UIStoryboard.main().instantiateViewController(identifier: HomeVC.identifier()) as! HomeVC
-    }
-    
     func registerTableViewCell() {
         self.tableView.register(UINib(nibName: HomeTableViewCell.reUserIdentifier(), bundle: nil), forCellReuseIdentifier: HomeTableViewCell.reUserIdentifier())
     }
+    
+    //MARK: - Actions
+    @IBAction func btnAddAction(_ sender: Any) {
+        let obj = AddArtworkVC.instantiate()
+        self.push(vc: obj)
+    }
+    
     
 
 }
