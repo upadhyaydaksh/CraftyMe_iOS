@@ -91,12 +91,6 @@ class UserManager: NSObject {
     }
     
     func logout() {
-        SVProgressHUD.show(withStatus: "Logging out")
-        self.setSplashAsRoot()
-    }
-    
-    func setSplashAsRoot() {
-        SVProgressHUD.dismiss()
         self.deleteActiveUser()
         appDel.setRootViewController()
     }
