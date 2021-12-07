@@ -639,6 +639,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnDelete" destination="CzF-dQ-IL4" id="0iM-qf-QUV"/>
+                        <outlet property="btnSave" destination="Da8-42-52n" id="tLU-Du-xkQ"/>
                         <outlet property="imgArtwork" destination="omU-Yp-t28" id="2Pb-5F-FYL"/>
                         <outlet property="lblTitle" destination="L34-St-LIi" id="gub-u7-6Hz"/>
                         <outlet property="txtCreatedDate" destination="Rqm-fc-OdH" id="O4E-RA-25i"/>

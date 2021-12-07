@@ -22,7 +22,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let obj = AddArtworkVC.instantiate()
-        obj.isFromHome = true
+        obj.isNew = false
         obj.artwork = self.artworks[indexPath.row]
         self.push(vc: obj)
     }

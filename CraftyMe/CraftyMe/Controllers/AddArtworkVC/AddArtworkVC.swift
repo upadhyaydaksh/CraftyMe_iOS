@@ -15,22 +15,32 @@ class AddArtworkVC: DUBaseVC {
     @IBOutlet weak var txtTitle: DUTextField!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var txtCreatedDate: DUTextField!
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!    
+    @IBOutlet weak var btnSave: DUButton!
+    @IBOutlet weak var btnDelete: DUButton!
     
     var imagePicker = UIImagePickerController()
     var artwork = Artwork()
     var user = User()
     var artworkImage: UIImage?
-    
-    var isFromHome : Bool = false
+    var isNew : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if isFromHome {
-            self.lblTitle.text = "Update"
+        if self.isNew {
+            self.lblTitle.text = "Add Artwork"
+            self.btnDelete.isHidden = true
+            self.btnSave.setTitle("Save", for: .normal)
         } else {
-            self.lblTitle.text = "Add"
+            self.lblTitle.text = "Update Artwork"
+            self.btnDelete.isHidden = false
+            self.btnSave.setTitle("Update", for: .normal)
+            self.loadData()
         }
+    }
+    
+    func loadData() {
+        self.txtTitle.text = self.artwork.title
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +76,16 @@ class AddArtworkVC: DUBaseVC {
         }
     
     @IBAction func btnSaveAction(_ sender: Any) {
-        self.saveArtwork()
+        
+        if self.isNew {
+            self.saveArtwork()
+        } else {
+            self.updateArtWork()
+        }
+        
+        DUMessage.showSuccessWithMessage(message: self.isNew ? "Subscription Added successfully" : "Updated Successfully")
+        self.goBack()
+        
     }
     
     @IBAction func btnDeleteAction(_ sender: Any) {
@@ -100,10 +119,21 @@ extension AddArtworkVC {
     }
     
     func deleteArtwork() {
-        if let id = self.artwork.id {
-            self.firebaseRef.child("users").child(self.user.id!).child("artworks").child(id).removeValue()
+        if let id = self.artwork.id, let userId = self.user.id {
+            self.firebaseRef.child("users").child(userId).child("artworks").child(id).removeValue()
         }
         DUMessage.showSuccessWithMessage(message: "Deleted successfully")
         self.goBack()
+    }
+    
+    func updateArtWork() {
+        if let userId = self.user.id, let id = self.artwork.id {
+            self.firebaseRef.child("users").child(userId).child("artworks").child(id).updateChildValues([
+                "title" : self.txtTitle.text!,
+                
+            ])
+            
+            DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
+        }
     }
 }
