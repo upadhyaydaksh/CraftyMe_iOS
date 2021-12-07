@@ -20,6 +20,7 @@ let kParseError = "Parse Error"
 let kSomethingWentWrong = "Something went wrong. Please email to hello@zircos.me about this issue."
 let kSomethingWentWrongError = "Something went wrong. Please try again."
 let kChatNotAvailable = "Chat not available. Try later."
+let kAreYouSureToDeleteArtwork = "Are you sure you want to delete this artwork?"
 // MARK: - Alert Messages
 
 let kEnablePushNotificationFromSettings = "You have declined for Push Notifications. You can anytime enable Push Notifications by going to\nSettings -> \(applicationName()) -> Notification."

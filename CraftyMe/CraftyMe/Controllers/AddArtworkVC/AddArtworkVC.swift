@@ -15,7 +15,7 @@ class AddArtworkVC: DUBaseVC {
     @IBOutlet weak var txtTitle: DUTextField!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var txtCreatedDate: DUTextField!
-    @IBOutlet weak var lblTitle: UILabel!    
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnSave: DUButton!
     @IBOutlet weak var btnDelete: DUButton!
     
@@ -83,7 +83,7 @@ class AddArtworkVC: DUBaseVC {
             self.updateArtWork()
         }
         
-        DUMessage.showSuccessWithMessage(message: self.isNew ? "Subscription Added successfully" : "Updated Successfully")
+        DUMessage.showSuccessWithMessage(message: self.isNew ? "Artwork Added successfully" : "Updated Successfully")
         self.goBack()
         
     }
@@ -115,7 +115,6 @@ extension AddArtworkVC {
             "id": "\(timeStampId)",
             "title" : "\(self.txtTitle.text!)"
         ])
-        self.goBack()
     }
     
     func deleteArtwork() {
@@ -129,10 +128,8 @@ extension AddArtworkVC {
     func updateArtWork() {
         if let userId = self.user.id, let id = self.artwork.id {
             self.firebaseRef.child("users").child(userId).child("artworks").child(id).updateChildValues([
-                "title" : self.txtTitle.text!,
-                
+                "title" : self.txtTitle.text!,            
             ])
-            
             DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
         }
     }

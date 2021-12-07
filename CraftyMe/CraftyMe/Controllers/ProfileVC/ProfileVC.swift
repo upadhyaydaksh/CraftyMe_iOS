@@ -92,8 +92,8 @@ extension ProfileVC {
                 "lastName" : self.txtLastName.text!,
             ])
             let user = User(id: self.user.id, firstName: self.txtFirstName.text, lastName: self.txtLastName.text, email: self.user.email, profilePicture: "")
-            UserManager.sharedManager().activeUser = user
             DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
+            UserManager.sharedManager().activeUser = user
         }
     }
     
