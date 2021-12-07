@@ -32,4 +32,8 @@ class HomeTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
+    func configureCell(artwork: Artwork) {
+        self.lblTitle.text = artwork.title
+    }
+    
 }

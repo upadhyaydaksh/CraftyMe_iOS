@@ -16,8 +16,10 @@ class AddArtworkVC: DUBaseVC {
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var txtCreatedDate: DUTextField!
     @IBOutlet weak var lblTitle: UILabel!
-    var imagePicker = UIImagePickerController()
     
+    var imagePicker = UIImagePickerController()
+    var artwork = Artwork()
+    var user = User()
     var artworkImage: UIImage?
     
     var isFromHome : Bool = false
@@ -29,6 +31,10 @@ class AddArtworkVC: DUBaseVC {
         } else {
             self.lblTitle.text = "Add"
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.user = UserManager.sharedManager().activeUser
     }
     
     //MARK: - Actions
@@ -60,11 +66,11 @@ class AddArtworkVC: DUBaseVC {
         }
     
     @IBAction func btnSaveAction(_ sender: Any) {
-        
+        self.saveArtwork()
     }
     
     @IBAction func btnDeleteAction(_ sender: Any) {
-        
+        self.deleteArtwork()
     }
     
     @IBAction func btnGoBackAction(_ sender: Any) {
@@ -79,5 +85,25 @@ extension AddArtworkVC: UIImagePickerControllerDelegate, UINavigationControllerD
         self.artworkImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
         self.imgArtwork.image = self.artworkImage
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddArtworkVC {
+    
+    func saveArtwork() {
+        let timeStampId = Int(self.timestamp)
+        self.firebaseRef.child("users").child(self.user.id!).child("artworks").child("\(timeStampId)").setValue([
+            "id": "\(timeStampId)",
+            "title" : "\(self.txtTitle.text!)"
+        ])
+        self.goBack()
+    }
+    
+    func deleteArtwork() {
+        if let id = self.artwork.id {
+            self.firebaseRef.child("users").child(self.user.id!).child("artworks").child(id).removeValue()
+        }
+        DUMessage.showSuccessWithMessage(message: "Deleted successfully")
+        self.goBack()
     }
 }
