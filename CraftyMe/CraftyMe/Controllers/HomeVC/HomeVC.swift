@@ -33,6 +33,7 @@ class HomeVC: DUBaseVC {
     //MARK: - Actions
     @IBAction func btnAddAction(_ sender: Any) {
         let obj = AddArtworkVC.instantiate()
+        obj.isNew = true
         self.push(vc: obj)
     }
     
