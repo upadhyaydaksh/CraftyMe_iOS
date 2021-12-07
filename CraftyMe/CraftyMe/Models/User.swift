@@ -3,7 +3,7 @@
 //  CraftyMe
 //
 //  Created by Daksh Upadhyay on 2021-11-28.
-//
+//  Copyright © 2021 CraftyMe. All rights reserved.
 
 import Foundation
 import ObjectMapper

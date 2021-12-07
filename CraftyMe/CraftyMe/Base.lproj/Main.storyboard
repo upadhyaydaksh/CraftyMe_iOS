@@ -75,7 +75,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="69d-ex-wpZ">
                                                 <rect key="frame" x="24" y="288" width="272" height="112"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xFc-w1-9tX" customClass="DUTextField" customModule="CraftyMe" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="upadhyaydaksh96@gmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xFc-w1-9tX" customClass="DUTextField" customModule="CraftyMe" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="272" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="aFR-Iy-aLQ"/>
@@ -84,7 +84,7 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sG7-Jh-FEn" customClass="DUTextField" customModule="CraftyMe" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Craftyme@123" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sG7-Jh-FEn" customClass="DUTextField" customModule="CraftyMe" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="68" width="272" height="44"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -767,7 +767,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="44"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Save">
+                                                        <state key="normal" title="Update">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -922,16 +922,16 @@
             <size key="intrinsicContentSize" width="147" height="34"/>
         </designable>
         <designable name="sG7-Jh-FEn">
-            <size key="intrinsicContentSize" width="138.5" height="34"/>
+            <size key="intrinsicContentSize" width="182" height="34"/>
         </designable>
         <designable name="u4s-jr-H9w">
             <size key="intrinsicContentSize" width="87.5" height="34"/>
         </designable>
         <designable name="xFc-w1-9tX">
-            <size key="intrinsicContentSize" width="99" height="34"/>
+            <size key="intrinsicContentSize" width="323" height="34"/>
         </designable>
         <designable name="yJQ-T6-nBl">
-            <size key="intrinsicContentSize" width="54" height="40"/>
+            <size key="intrinsicContentSize" width="80" height="40"/>
         </designable>
     </designables>
     <resources>

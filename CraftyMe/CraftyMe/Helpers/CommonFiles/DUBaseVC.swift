@@ -13,6 +13,7 @@ class DUBaseVC: UIViewController {
     
     //MARK: - Class Variables
     let firebaseRef = Database.database().reference()
+    let timestamp = NSDate().timeIntervalSince1970
     
     func push(vc: UIViewController) {
         self.navigationController?.pushViewController(vc, animated: true)
