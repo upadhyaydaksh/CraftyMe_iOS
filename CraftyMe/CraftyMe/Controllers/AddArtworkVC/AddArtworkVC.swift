@@ -7,6 +7,7 @@
 
 import UIKit
 import MobileCoreServices
+import IQDropDownTextField
 
 class AddArtworkVC: DUBaseVC {
     
@@ -14,7 +15,7 @@ class AddArtworkVC: DUBaseVC {
     @IBOutlet weak var imgArtwork: UIImageView!
     @IBOutlet weak var txtTitle: DUTextField!
     @IBOutlet weak var txtDescription: UITextView!
-    @IBOutlet weak var txtCreatedDate: DUTextField!
+    @IBOutlet weak var txtCreatedDate: IQDropDownTextField!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnSave: DUButton!
     @IBOutlet weak var btnDelete: DUButton!
@@ -27,6 +28,7 @@ class AddArtworkVC: DUBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initializeTextField()
         if self.isNew {
             self.lblTitle.text = "Add Artwork"
             self.btnDelete.isHidden = true
@@ -41,6 +43,8 @@ class AddArtworkVC: DUBaseVC {
     
     func loadData() {
         self.txtTitle.text = self.artwork.title
+        self.txtCreatedDate.date = self.artwork.createdDate
+        self.txtDescription.text = self.artwork.artDescription
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,14 +70,28 @@ class AddArtworkVC: DUBaseVC {
     }
     
     func selectImage(sourceType: UIImagePickerController.SourceType) {
-            imagePicker.modalPresentationStyle = .fullScreen
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = false
-            imagePicker.sourceType = sourceType
-            imagePicker.mediaTypes = [kUTTypeImage as String]
-            imagePicker.modalPresentationStyle = .fullScreen
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+        imagePicker.modalPresentationStyle = .fullScreen
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = sourceType
+        imagePicker.mediaTypes = [kUTTypeImage as String]
+        imagePicker.modalPresentationStyle = .fullScreen
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func initializeTextField() {
+        
+        self.txtCreatedDate.dropDownMode = .datePicker
+        self.txtCreatedDate.placeholder = "Select Artwork Created Date"
+        
+        self.txtCreatedDate.datePicker.minimumDate = Date().dateBeforeDays(days: 730) //MINIMUM 2 Years
+        self.txtCreatedDate.datePicker.maximumDate = Date().dateAfterDays(days: 730) //MAXIMUM 2 Years
+        self.txtCreatedDate.dateTimeFormatter = appDateFormatterWithSingleHourFormat()
+        
+        self.txtCreatedDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(self.doneAction(_:)))
+        
+        self.txtCreatedDate.delegate = self
+    }
     
     @IBAction func btnSaveAction(_ sender: Any) {
         
@@ -83,7 +101,7 @@ class AddArtworkVC: DUBaseVC {
             self.updateArtWork()
         }
         
-        DUMessage.showSuccessWithMessage(message: self.isNew ? "Artwork Added successfully" : "Updated Successfully")
+        DUMessage.showSuccessWithMessage(message: self.isNew ? "Artwork Added successfully" : "Artwork updated successfully")
         self.goBack()
         
     }
@@ -107,14 +125,30 @@ extension AddArtworkVC: UIImagePickerControllerDelegate, UINavigationControllerD
     }
 }
 
+extension AddArtworkVC: IQDropDownTextFieldDelegate {
+    
+    // MARK: - IQDropDownTextFieldDelegate
+    
+    @objc func doneAction(_ sender : IQDropDownTextField) {
+        self.artwork.createdDate = sender.datePicker.date
+        self.txtCreatedDate.date = sender.datePicker.date
+    }
+}
+
+//Firebase
+
 extension AddArtworkVC {
     
     func saveArtwork() {
         let timeStampId = Int(self.timestamp)
-        self.firebaseRef.child("users").child(self.user.id!).child("artworks").child("\(timeStampId)").setValue([
-            "id": "\(timeStampId)",
-            "title" : "\(self.txtTitle.text!)"
-        ])
+        if let userId = self.user.id {
+            self.firebaseRef.child("users").child(userId).child("artworks").child("\(timeStampId)").setValue([
+                "id": "\(timeStampId)",
+                "title" : "\(self.txtTitle.text!)",
+                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "artDescription": "\(self.txtDescription.text!)"
+            ])
+        }
     }
     
     func deleteArtwork() {
@@ -128,7 +162,9 @@ extension AddArtworkVC {
     func updateArtWork() {
         if let userId = self.user.id, let id = self.artwork.id {
             self.firebaseRef.child("users").child(userId).child("artworks").child(id).updateChildValues([
-                "title" : self.txtTitle.text!,            
+                "title" : self.txtTitle.text!,
+                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "artDescription": "\(self.txtDescription.text!)"
             ])
             DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
         }
