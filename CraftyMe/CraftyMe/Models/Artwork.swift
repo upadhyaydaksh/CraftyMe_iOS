@@ -15,11 +15,11 @@ class Artwork: NSObject, Mappable, NSCopying, NSCoding{
         
         var id: String?
         var title: String?
-        var createdDate: Date?
+        var createdDate: String?
         var artDescription: String?
         var artworkImageUrl: String?
         
-        init(id: String?, title: String?, createdDate: Date?, artDescription: String?, artworkImageUrl: String?) {
+        init(id: String?, title: String?, createdDate: String?, artDescription: String?, artworkImageUrl: String?) {
             self.id = id
             self.title = title
             self.createdDate = createdDate
@@ -55,7 +55,7 @@ class Artwork: NSObject, Mappable, NSCopying, NSCoding{
         public func mapping(map: Map) {
             id <- map["id"]
             title <- map["title"]
-            createdDate <- (map["createdDate"], DateFormatterTransform(dateFormatter:serverDefaultDateTimeFormatter()))
+            createdDate <- map["createdDate"]
             artDescription <- map["artDescription"]
             artworkImageUrl <- map["artworkImageUrl"]
         }

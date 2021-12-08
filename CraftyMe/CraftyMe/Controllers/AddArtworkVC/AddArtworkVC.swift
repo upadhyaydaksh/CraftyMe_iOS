@@ -44,8 +44,10 @@ class AddArtworkVC: DUBaseVC {
     }
     
     func loadData() {
-        self.txtTitle.text = self.artwork.title
-        self.txtCreatedDate.date = self.artwork.createdDate
+        self.txtTitle.text = self.artwork.title        
+        if let createdDate = self.artwork.createdDate {
+            self.txtCreatedDate.date = getDate(strDate: createdDate)
+        }
         self.txtDescription.text = self.artwork.artDescription
         self.imgArtwork.sd_setImage(with: URL(string: artwork.artworkImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
     }
@@ -118,7 +120,7 @@ class AddArtworkVC: DUBaseVC {
     }
     
     @IBAction func btnDeleteAction(_ sender: Any) {
-        self.deleteArtwork()
+        self.showDeleteConfirmation()
     }
     
     @IBAction func btnGoBackAction(_ sender: Any) {
@@ -141,7 +143,6 @@ extension AddArtworkVC: IQDropDownTextFieldDelegate {
     // MARK: - IQDropDownTextFieldDelegate
     
     @objc func doneAction(_ sender : IQDropDownTextField) {
-        self.artwork.createdDate = sender.datePicker.date
         self.txtCreatedDate.date = sender.datePicker.date
     }
 }
@@ -198,7 +199,7 @@ extension AddArtworkVC {
             self.firebaseRef.child("users").child(userId).child("artworks").child("\(timeStampId)").setValue([
                 "id": "\(timeStampId)",
                 "title" : "\(self.txtTitle.text!)",
-                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "createdDate": self.txtCreatedDate.date?.getFullDateInDefaultFormat() ?? Date().getFullDateInDefaultFormat(),
                 "artDescription": "\(self.txtDescription.text!)"
             ])
         }
@@ -210,7 +211,7 @@ extension AddArtworkVC {
             self.firebaseRef.child("users").child(userId).child("artworks").child("\(timeStampId)").setValue([
                 "id": "\(timeStampId)",
                 "title" : "\(self.txtTitle.text!)",
-                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "createdDate": self.txtCreatedDate.date?.getFullDateInDefaultFormat() ?? Date().getFullDateInDefaultFormat(),
                 "artDescription": "\(self.txtDescription.text!)",
                 "artworkImageUrl": imageUrl
             ])
@@ -229,7 +230,7 @@ extension AddArtworkVC {
         if let userId = self.user.id, let id = self.artwork.id {
             self.firebaseRef.child("users").child(userId).child("artworks").child(id).updateChildValues([
                 "title" : self.txtTitle.text!,
-                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "createdDate": self.txtCreatedDate.date?.getFullDateInDefaultFormat() ?? Date().getFullDateInDefaultFormat(),
                 "artDescription": "\(self.txtDescription.text!)",
                 "artworkImageUrl": imageUrl
             ])
@@ -241,10 +242,34 @@ extension AddArtworkVC {
         if let userId = self.user.id, let id = self.artwork.id {
             self.firebaseRef.child("users").child(userId).child("artworks").child(id).updateChildValues([
                 "title" : self.txtTitle.text!,
-                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "createdDate": self.txtCreatedDate.date?.getFullDateInDefaultFormat() ?? Date().getFullDateInDefaultFormat(),
                 "artDescription": "\(self.txtDescription.text!)"
             ])
             DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
         }
     }
+    
+    func showDeleteConfirmation() {
+            
+            let alert = UIAlertController(title: "Delete", message: kAreYouSureToDeleteArtwork, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (_) in
+                self.deleteArtwork()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    
+    func getDate(strDate: String) -> Date? {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateFormatter.locale = Locale.current
+            print(dateFormatter.date(from: strDate))
+            return dateFormatter.date(from: strDate) // replace Date String
+        }
 }
