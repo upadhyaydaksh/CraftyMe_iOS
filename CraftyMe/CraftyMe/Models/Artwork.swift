@@ -15,19 +15,25 @@ class Artwork: NSObject, Mappable, NSCopying, NSCoding{
         
         var id: String?
         var title: String?
+        var createdDate: Date?
+        var artDescription: String?
         
-        init(id: String?, title: String?) {
+    init(id: String?, title: String?, createdDate: Date?, artDescription: String?) {
             self.id = id
             self.title = title
+            self.createdDate = createdDate
+            self.artDescription = artDescription
         }
         
         func copy(with zone: NSZone? = nil) -> Any {
-            return Artwork(id: id, title: title)
+            return Artwork(id: id, title: title, createdDate: createdDate, artDescription: artDescription)
         }
         
         override init() {
             self.id = nil
             self.title = nil
+            self.createdDate = nil
+            self.artDescription = nil
         }
         
         // MARK: ObjectMapper Initalizers
@@ -44,9 +50,10 @@ class Artwork: NSObject, Mappable, NSCopying, NSCoding{
          - parameter map: A mapping from ObjectMapper
          */
         public func mapping(map: Map) {
-            id <- map["_id"]
+            id <- map["id"]
             title <- map["title"]
-            
+            createdDate <- (map["createdDate"], DateFormatterTransform(dateFormatter:serverDefaultDateTimeFormatter()))
+            artDescription <- map["artDescription"]
         }
         
         // MARK: NSCoding Protocol

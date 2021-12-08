@@ -34,6 +34,12 @@ class HomeTableViewCell: UITableViewCell {
     
     func configureCell(artwork: Artwork) {
         self.lblTitle.text = artwork.title
+        if let createdDate = artwork.createdDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, y"
+            self.lblCreatedDate.text = dateFormatter.string(from: createdDate)
+        }
+        self.lblDescription.text = artwork.artDescription
     }
     
 }

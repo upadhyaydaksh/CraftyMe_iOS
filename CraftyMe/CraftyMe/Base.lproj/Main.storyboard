@@ -543,7 +543,7 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="emailAddress"/>
                                                     </textView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Created Date" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rqm-fc-OdH" customClass="DUTextField" customModule="CraftyMe" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Created Date" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rqm-fc-OdH" customClass="IQDropDownTextField">
                                                         <rect key="frame" x="0.0" y="192" width="272" height="44"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -918,7 +918,7 @@
             <size key="intrinsicContentSize" width="68" height="40"/>
         </designable>
         <designable name="Rqm-fc-OdH">
-            <size key="intrinsicContentSize" width="169" height="34"/>
+            <size key="intrinsicContentSize" width="147" height="34"/>
         </designable>
         <designable name="ZkX-6q-Dtr">
             <size key="intrinsicContentSize" width="99" height="34"/>
