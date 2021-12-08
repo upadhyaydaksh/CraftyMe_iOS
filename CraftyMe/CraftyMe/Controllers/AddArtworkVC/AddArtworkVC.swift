@@ -8,6 +8,8 @@
 import UIKit
 import MobileCoreServices
 import IQDropDownTextField
+import Firebase
+import FirebaseStorage
 
 class AddArtworkVC: DUBaseVC {
     
@@ -45,6 +47,7 @@ class AddArtworkVC: DUBaseVC {
         self.txtTitle.text = self.artwork.title
         self.txtCreatedDate.date = self.artwork.createdDate
         self.txtDescription.text = self.artwork.artDescription
+        self.imgArtwork.sd_setImage(with: URL(string: artwork.artworkImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,9 +99,17 @@ class AddArtworkVC: DUBaseVC {
     @IBAction func btnSaveAction(_ sender: Any) {
         
         if self.isNew {
-            self.saveArtwork()
+            if self.artworkImage == nil{
+                self.saveArtwork()
+            }else{
+                self.saveWithMedia()
+            }
         } else {
-            self.updateArtWork()
+            if self.artworkImage == nil{
+                self.updateArtWork()
+            }else{
+                self.updateWithMedia()
+            }
         }
         
         DUMessage.showSuccessWithMessage(message: self.isNew ? "Artwork Added successfully" : "Artwork updated successfully")
@@ -138,6 +149,48 @@ extension AddArtworkVC: IQDropDownTextFieldDelegate {
 //Firebase
 
 extension AddArtworkVC {
+        
+    func saveWithMedia() {
+        if let userId = self.user.id {
+            let storageRef = Storage.storage().reference().child("\(userId)_ARTWORK_\(self.timestamp).png")
+            if let img = self.artworkImage {
+                if let uploadData = img.pngData(){
+                    storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                        if error != nil {
+                            print("error")
+                            return}
+                        else{
+                            storageRef.downloadURL(completion: { (url, error) in
+                                print("Image URL: \((url?.absoluteString)!)")
+                                self.saveArtwork(imageUrl: (url?.absoluteString)!)
+                            })
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
+    func updateWithMedia() {
+        if let userId = self.user.id {
+            let storageRef = Storage.storage().reference().child("\(userId)_ARTWORK_\(self.timestamp).png")
+            if let img = self.artworkImage {
+                if let uploadData = img.pngData(){
+                    storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                        if error != nil {
+                            print("error")
+                            return}
+                        else{
+                            storageRef.downloadURL(completion: { (url, error) in
+                                print("Image URL: \((url?.absoluteString)!)")
+                                self.updateArtWork(imageUrl: (url?.absoluteString)!)
+                            })
+                        }
+                    })
+                }
+            }
+        }
+    }
     
     func saveArtwork() {
         let timeStampId = Int(self.timestamp)
@@ -151,12 +204,37 @@ extension AddArtworkVC {
         }
     }
     
+    func saveArtwork(imageUrl: String) {
+        let timeStampId = Int(self.timestamp)
+        if let userId = self.user.id {
+            self.firebaseRef.child("users").child(userId).child("artworks").child("\(timeStampId)").setValue([
+                "id": "\(timeStampId)",
+                "title" : "\(self.txtTitle.text!)",
+                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "artDescription": "\(self.txtDescription.text!)",
+                "artworkImageUrl": imageUrl
+            ])
+        }
+    }
+    
     func deleteArtwork() {
         if let id = self.artwork.id, let userId = self.user.id {
             self.firebaseRef.child("users").child(userId).child("artworks").child(id).removeValue()
         }
         DUMessage.showSuccessWithMessage(message: "Deleted successfully")
         self.goBack()
+    }
+    
+    func updateArtWork(imageUrl: String) {
+        if let userId = self.user.id, let id = self.artwork.id {
+            self.firebaseRef.child("users").child(userId).child("artworks").child(id).updateChildValues([
+                "title" : self.txtTitle.text!,
+                "createdDate": self.txtCreatedDate.date?.gmtString() ?? Date().gmtString(),
+                "artDescription": "\(self.txtDescription.text!)",
+                "artworkImageUrl": imageUrl
+            ])
+            DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
+        }
     }
     
     func updateArtWork() {

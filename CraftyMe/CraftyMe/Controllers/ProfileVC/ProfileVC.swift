@@ -8,6 +8,8 @@
 import UIKit
 import MobileCoreServices
 import Firebase
+import SDWebImage
+import ObjectMapper
 
 class ProfileVC: DUBaseVC {
     
@@ -24,10 +26,7 @@ class ProfileVC: DUBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.user = UserManager.sharedManager().activeUser
-        self.txtEmail.text = self.user.email
-        self.txtFirstName.text = self.user.firstName
-        self.txtLastName.text = self.user.lastName
+        self.loadData()
     }    
     
     //MARK: - Actions
@@ -54,17 +53,21 @@ class ProfileVC: DUBaseVC {
     }
     
     func selectImage(sourceType: UIImagePickerController.SourceType) {
-            imagePicker.modalPresentationStyle = .fullScreen
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = false
-            imagePicker.sourceType = sourceType
-            imagePicker.mediaTypes = [kUTTypeImage as String]
-            imagePicker.modalPresentationStyle = .fullScreen
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+        imagePicker.modalPresentationStyle = .fullScreen
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = sourceType
+        imagePicker.mediaTypes = [kUTTypeImage as String]
+        imagePicker.modalPresentationStyle = .fullScreen
+        self.present(imagePicker, animated: true, completion: nil)
+    }
     
     @IBAction func btnSaveAction(_ sender: Any) {
-        self.updateUser()
+        if self.profileImage == nil {
+            self.updateUser()
+        } else {
+            self.uploadMedia()
+        }
     }
     
     @IBAction func btnLogoutAction(_ sender: Any) {
@@ -84,6 +87,41 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
 }
 
 extension ProfileVC {
+    
+    func uploadMedia() {
+           if let userId = self.user.id {
+               let storageRef = Storage.storage().reference().child("\(userId)\(self.timestamp).png")
+               if let img = self.profileImage {
+                   if let imageData = img.jpeg(.lowest) {
+                       storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
+                           if error != nil {
+                               print("error")
+                               return}
+                           else{
+                               storageRef.downloadURL(completion: { (url, error) in
+                                   print("Image URL: \((url?.absoluteString)!)")
+                                   self.updateUserProfileImage(imageUrl: (url?.absoluteString)!)
+                               })
+                           }
+                       })
+                   }
+
+               }
+           }
+       }
+    
+    func updateUserProfileImage(imageUrl: String) {
+        if let userId = self.user.id, userId.count > 0 {
+            self.firebaseRef.child("users").child(userId).updateChildValues([
+                "firstName" : self.txtFirstName.text!,
+                "lastName" : self.txtLastName.text!,
+                "profilePicture": imageUrl
+            ])
+            let user = User(id: self.user.id, firstName: self.txtFirstName.text, lastName: self.txtLastName.text, email: self.user.email, profilePicture: imageUrl)
+            DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
+            UserManager.sharedManager().activeUser = user
+        }
+    }
     
     func updateUser() {
         if let userId = self.user.id, userId.count > 0 {
@@ -114,24 +152,26 @@ extension ProfileVC {
     }
         
     func getUserProfile() {
-        if let userID = self.user.id {
-            self.firebaseRef.child("users").child(userID).observeSingleEvent(of: .value, with: { snapshot in
-                // Get user value
-                let value = snapshot.value as? NSDictionary
-                let userId = value?["id"] as? String ?? ""
-                let firstName = value?["firstName"] as? String ?? ""
-                let lastName = value?["lastName"] as? String ?? ""
-                let email = value?["email"] as? String ?? ""
-                
-                let user = User(id: userId, firstName: firstName, lastName: lastName, email: email, profilePicture: "")
-                UserManager.sharedManager().activeUser = user
-                
-                self.txtFirstName.text = firstName
-                self.txtLastName.text = lastName
-                self.txtEmail.text = email
-            })
+            if let userId = self.user.id {
+                self.firebaseRef.child("users").child(userId).observeSingleEvent(of: .value, with: { snapshot in
+                    // Get user value
+                    let value = snapshot.value as? NSDictionary
+                    let userId = value?["id"] as? String ?? ""
+                    let firstName = value?["firstName"] as? String ?? ""
+                    let lastName = value?["lastName"] as? String ?? ""
+                    let email = value?["email"] as? String ?? ""
+                    let profileImageUrl =  value?["profilePicture"] as? String ?? ""
+                    
+                    let user = User(id: userId, firstName: firstName, lastName: lastName, email: email, profilePicture: profileImageUrl)
+                    UserManager.sharedManager().activeUser = user
+                    
+                    self.txtFirstName.text = firstName
+                    self.txtLastName.text = lastName
+                    self.txtEmail.text = email
+                    self.imgProfile.sd_setImage(with: URL(string: profileImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
+                })
+            }
         }
-    }
     
     func loadData() {
         self.user = UserManager.sharedManager().activeUser
