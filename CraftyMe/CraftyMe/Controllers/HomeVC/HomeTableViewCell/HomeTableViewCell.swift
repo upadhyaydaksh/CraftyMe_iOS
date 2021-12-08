@@ -40,6 +40,7 @@ class HomeTableViewCell: UITableViewCell {
             self.lblCreatedDate.text = dateFormatter.string(from: createdDate)
         }
         self.lblDescription.text = artwork.artDescription
+        self.imgArtWork.sd_setImage(with: URL(string: artwork.artworkImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
     }
     
 }

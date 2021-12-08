@@ -7,6 +7,9 @@ PODS:
   - Firebase/Database (8.9.1):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 8.9.0)
+  - Firebase/Storage (8.9.1):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 8.9.0)
   - FirebaseAuth (8.9.0):
     - FirebaseCore (~> 8.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
@@ -24,6 +27,9 @@ PODS:
   - FirebaseDatabase (8.9.0):
     - FirebaseCore (~> 8.0)
     - leveldb-library (~> 1.22)
+  - FirebaseStorage (8.9.0):
+    - FirebaseCore (~> 8.0)
+    - GTMSessionFetcher/Core (~> 1.5)
   - GoogleDataTransport (9.1.2):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
@@ -54,6 +60,9 @@ PODS:
   - nanopb/encode (2.30908.0)
   - ObjectMapper (4.2.0)
   - PromisesObjC (2.0.0)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
   - SVProgressHUD (2.2.5)
   - SwiftMessages (5.0.1):
     - SwiftMessages/App (= 5.0.1)
@@ -62,9 +71,11 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
+  - Firebase/Storage
   - IQDropDownTextField
   - IQKeyboardManager
   - ObjectMapper
+  - SDWebImage
   - SVProgressHUD
   - SwiftMessages (~> 5.0)
 
@@ -75,6 +86,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
+    - FirebaseStorage
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
@@ -84,6 +96,7 @@ SPEC REPOS:
     - nanopb
     - ObjectMapper
     - PromisesObjC
+    - SDWebImage
     - SVProgressHUD
     - SwiftMessages
 
@@ -93,6 +106,7 @@ SPEC CHECKSUMS:
   FirebaseCore: c5aab092d9c4b8efea894946166b04c9d9ef0e68
   FirebaseCoreDiagnostics: 5daa63f1c1409d981a2d5007daa100b36eac6a34
   FirebaseDatabase: 2236b804cf0cac165b4620669bedf7ee643a2bcc
+  FirebaseStorage: 452c98c31ccb40b819764bf3039426c4388d9939
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
@@ -102,9 +116,10 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: 32ce3cfc8388b41aae56ff4853cc752a20101147
 
-PODFILE CHECKSUM: 878b18c8899fe292ac4c16c59d715f5161990fe8
+PODFILE CHECKSUM: 90b72d2da438edb435f0d403ce98b8375dac2632
 
 COCOAPODS: 1.11.2

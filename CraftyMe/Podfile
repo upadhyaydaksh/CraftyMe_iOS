@@ -9,6 +9,10 @@ target 'CraftyMe' do
 
 pod 'Firebase/Auth' 
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
+
+# Image download async
+pod 'SDWebImage'
 
 pod 'IQKeyboardManager'
 pod 'IQDropDownTextField'
