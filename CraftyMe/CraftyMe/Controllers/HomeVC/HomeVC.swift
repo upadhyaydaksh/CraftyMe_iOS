@@ -62,8 +62,8 @@ extension HomeVC {
                             self.artworks.append(artwork)
                         }                       
                     }
-                    self.tableView.reloadData()
                 }
+                self.tableView.reloadData()
             })
         }
     }
