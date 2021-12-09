@@ -35,12 +35,19 @@ class HomeTableViewCell: UITableViewCell {
     func configureCell(artwork: Artwork) {
         self.lblTitle.text = artwork.title
         if let createdDate = artwork.createdDate {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM d, y"
-            self.lblCreatedDate.text = dateFormatter.string(from: createdDate)
+            self.lblCreatedDate.text = createdDate
         }
         self.lblDescription.text = artwork.artDescription
         self.imgArtWork.sd_setImage(with: URL(string: artwork.artworkImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
     }
+    
+    func getDate(strDate: String) -> Date? {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateFormatter.locale = Locale.current
+            print(dateFormatter.date(from: strDate))
+            return dateFormatter.date(from: strDate) // replace Date String
+        }
     
 }
