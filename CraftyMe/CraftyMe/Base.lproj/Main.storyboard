@@ -862,6 +862,7 @@
                         <outlet property="txtEmail" destination="Mgk-wL-KfV" id="P4p-bC-KlO"/>
                         <outlet property="txtFirstName" destination="Dsr-UF-V2X" id="CNt-lB-V82"/>
                         <outlet property="txtLastName" destination="Pq3-xE-qsa" id="UMQ-ay-Fza"/>
+                        <outlet property="vwImgView" destination="4Aa-84-jLm" id="hOw-Zd-3oo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfp-3x-blW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

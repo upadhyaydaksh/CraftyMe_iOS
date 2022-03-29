@@ -15,6 +15,7 @@ class ProfileVC: DUBaseVC {
     
     //MARK: - Outlets
     @IBOutlet weak var btnImagePicker: UIButton!
+    @IBOutlet weak var vwImgView: DUView!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var txtFirstName: DUTextField!
     @IBOutlet weak var txtLastName: DUTextField!
@@ -152,26 +153,33 @@ extension ProfileVC {
     }
         
     func getUserProfile() {
-            if let userId = self.user.id {
-                self.firebaseRef.child("users").child(userId).observeSingleEvent(of: .value, with: { snapshot in
-                    // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    let userId = value?["id"] as? String ?? ""
-                    let firstName = value?["firstName"] as? String ?? ""
-                    let lastName = value?["lastName"] as? String ?? ""
-                    let email = value?["email"] as? String ?? ""
-                    let profileImageUrl =  value?["profilePicture"] as? String ?? ""
-                    
-                    let user = User(id: userId, firstName: firstName, lastName: lastName, email: email, profilePicture: profileImageUrl)
-                    UserManager.sharedManager().activeUser = user
-                    
-                    self.txtFirstName.text = firstName
-                    self.txtLastName.text = lastName
-                    self.txtEmail.text = email
-                    self.imgProfile.sd_setImage(with: URL(string: profileImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
-                })
-            }
+        if let userId = self.user.id {
+            self.firebaseRef.child("users").child(userId).observeSingleEvent(of: .value, with: { snapshot in
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                let userId = value?["id"] as? String ?? ""
+                let firstName = value?["firstName"] as? String ?? ""
+                let lastName = value?["lastName"] as? String ?? ""
+                let email = value?["email"] as? String ?? ""
+                let profileImageUrl =  value?["profilePicture"] as? String ?? ""
+                
+                let user = User(id: userId, firstName: firstName, lastName: lastName, email: email, profilePicture: profileImageUrl)
+                UserManager.sharedManager().activeUser = user
+                
+                self.txtFirstName.text = firstName
+                self.txtLastName.text = lastName
+                self.txtEmail.text = email
+                self.imgProfile.sd_setImage(with: URL(string: profileImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
+                
+                self.vwImgView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                
+                UIView.animate(withDuration: 3.0, animations: {
+                    self.vwImgView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                    })
+                
+            })
         }
+    }
     
     func loadData() {
         self.user = UserManager.sharedManager().activeUser
