@@ -45,7 +45,7 @@ struct AddArtworkWidgetEntryView : View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("Add Art work").padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+            Text("Add Artwork").padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             Image("ic_plus")
                     .resizable()
                     .scaledToFit()
@@ -62,7 +62,7 @@ struct AddArtworkWidget: Widget {
             AddArtworkWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CraftyMe Widget")
-        .description("Use this widget to add your art work.")
+        .description("Use this widget to add your artwork.")
     }
 }
 
