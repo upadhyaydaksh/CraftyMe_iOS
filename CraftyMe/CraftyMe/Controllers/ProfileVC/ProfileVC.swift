@@ -173,9 +173,9 @@ extension ProfileVC {
                 
                 self.vwImgView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 
-                UIView.animate(withDuration: 3.0, animations: {
+                UIView.animate(withDuration: 2.0, animations: {
                     self.vwImgView.transform = CGAffineTransform(scaleX: 1, y: 1)
-                    })
+                })
                 
             })
         }

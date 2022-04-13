@@ -53,9 +53,9 @@ class AddArtworkVC: DUBaseVC {
         
         self.imgArtwork.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         
-        UIView.animate(withDuration: 3.0, animations: {
+        UIView.animate(withDuration: 2.0, animations: {
             self.imgArtwork.transform = CGAffineTransform(scaleX: 1, y: 1)
-            })
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {

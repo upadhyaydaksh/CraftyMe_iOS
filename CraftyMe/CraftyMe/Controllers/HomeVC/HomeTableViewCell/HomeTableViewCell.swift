@@ -39,6 +39,11 @@ class HomeTableViewCell: UITableViewCell {
         }
         self.lblDescription.text = artwork.artDescription
         self.imgArtWork.sd_setImage(with: URL(string: artwork.artworkImageUrl ?? ""), placeholderImage: UIImage(named: "logo.png"))
+        
+        self.imgArtWork.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        UIView.animate(withDuration: 2.0, animations: {
+            self.imgArtWork.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
     }
     
     func getDate(strDate: String) -> Date? {
