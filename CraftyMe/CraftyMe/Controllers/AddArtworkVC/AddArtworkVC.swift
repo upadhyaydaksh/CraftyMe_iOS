@@ -208,6 +208,7 @@ extension AddArtworkVC {
                 "createdDate": self.txtCreatedDate.date?.getFullDateInDefaultFormat() ?? Date().getFullDateInDefaultFormat(),
                 "artDescription": "\(self.txtDescription.text!)"
             ])
+            fireNotification()
         }
     }
     
@@ -221,6 +222,7 @@ extension AddArtworkVC {
                 "artDescription": "\(self.txtDescription.text!)",
                 "artworkImageUrl": imageUrl
             ])
+            fireNotification()
         }
     }
     
@@ -240,6 +242,7 @@ extension AddArtworkVC {
                 "artDescription": "\(self.txtDescription.text!)",
                 "artworkImageUrl": imageUrl
             ])
+            fireNotification()
             DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
         }
     }
@@ -251,6 +254,7 @@ extension AddArtworkVC {
                 "createdDate": self.txtCreatedDate.date?.getFullDateInDefaultFormat() ?? Date().getFullDateInDefaultFormat(),
                 "artDescription": "\(self.txtDescription.text!)"
             ])
+            fireNotification()
             DUMessage.showSuccessWithMessage(message: "Profile updated successfully.")
         }
     }
@@ -277,5 +281,27 @@ extension AddArtworkVC {
             dateFormatter.locale = Locale.current
             print(dateFormatter.date(from: strDate))
             return dateFormatter.date(from: strDate) // replace Date String
+    }
+    
+    func fireNotification(){        
+        let content = UNMutableNotificationContent()
+        if(isNew){
+            content.title = "Artwork Added Successfully"
+            content.body = "Your Artwork Was Added Successfully"
+        }else{
+            content.title = "Artwork Update Successfully"
+            content.body = "Your Artwork Was Updated Successfully"
         }
+        content.sound = UNNotificationSound.default
+
+        // show this notification in two seconds from now
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+
+        // choose a random identifier
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        // add our notification request
+        UNUserNotificationCenter.current().add(request)
+            
+    }
 }
