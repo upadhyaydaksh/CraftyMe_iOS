@@ -36,6 +36,13 @@
 		526079D427534D8800C63091 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526079D327534D8800C63091 /* User.swift */; };
 		526079D727534EF000C63091 /* AppDelegate + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526079D627534EF000C63091 /* AppDelegate + Additions.swift */; };
 		526FC84E2754472200D5D46B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 526FC84D2754472200D5D46B /* GoogleService-Info.plist */; };
+		52B139572806ECEF00FF08B2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B139562806ECEF00FF08B2 /* WidgetKit.framework */; };
+		52B139592806ECEF00FF08B2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B139582806ECEF00FF08B2 /* SwiftUI.framework */; };
+		52B1395C2806ECEF00FF08B2 /* AddArtworkWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B1395B2806ECEF00FF08B2 /* AddArtworkWidget.swift */; };
+		52B1395F2806ECF000FF08B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B1395E2806ECF000FF08B2 /* Assets.xcassets */; };
+		52B139612806ECF000FF08B2 /* AddArtworkWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52B1395D2806ECEF00FF08B2 /* AddArtworkWidget.intentdefinition */; };
+		52B139622806ECF000FF08B2 /* AddArtworkWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52B1395D2806ECEF00FF08B2 /* AddArtworkWidget.intentdefinition */; };
+		52B139652806ECF000FF08B2 /* AddArtworkWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52B139552806ECEF00FF08B2 /* AddArtworkWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52C1F7F2275FD9660017A5FE /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1F7F0275FD9660017A5FE /* Date+Additions.swift */; };
 		52C1F7F3275FD9660017A5FE /* NSDate+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1F7F1275FD9660017A5FE /* NSDate+Formatters.swift */; };
 		52DE9F1F275ECD300030CDDD /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE9F1E275ECD300030CDDD /* Artwork.swift */; };
@@ -44,6 +51,30 @@
 		52F3F38F27531B6400E6BA18 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F38E27531B6300E6BA18 /* HomeVC + TableView.swift */; };
 		52F3F39127531F7600E6BA18 /* DUBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3F39027531F7600E6BA18 /* DUBaseVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52B139632806ECF000FF08B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520F5A422749A84900677E02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B139542806ECEF00FF08B2;
+			remoteInfo = AddArtworkWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		52B139692806ECF000FF08B2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				52B139652806ECF000FF08B2 /* AddArtworkWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		520F5A4A2749A84900677E02 /* CraftyMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CraftyMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +107,15 @@
 		526079D327534D8800C63091 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		526079D627534EF000C63091 /* AppDelegate + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Additions.swift"; sourceTree = "<group>"; };
 		526FC84D2754472200D5D46B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		52B139502806EC6800FF08B2 /* CraftyMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CraftyMe.entitlements; sourceTree = "<group>"; };
+		52B139552806ECEF00FF08B2 /* AddArtworkWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AddArtworkWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B139562806ECEF00FF08B2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		52B139582806ECEF00FF08B2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		52B1395B2806ECEF00FF08B2 /* AddArtworkWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtworkWidget.swift; sourceTree = "<group>"; };
+		52B1395D2806ECEF00FF08B2 /* AddArtworkWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = AddArtworkWidget.intentdefinition; sourceTree = "<group>"; };
+		52B1395E2806ECF000FF08B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52B139602806ECF000FF08B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B1396A2806ED5F00FF08B2 /* AddArtworkWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AddArtworkWidgetExtension.entitlements; sourceTree = "<group>"; };
 		52C1F7F0275FD9660017A5FE /* Date+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
 		52C1F7F1275FD9660017A5FE /* NSDate+Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Formatters.swift"; sourceTree = "<group>"; };
 		52DE9F1E275ECD300030CDDD /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
@@ -97,6 +137,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B139522806ECEF00FF08B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B139592806ECEF00FF08B2 /* SwiftUI.framework in Frameworks */,
+				52B139572806ECEF00FF08B2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -104,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				DE640EF1E1C1E6FCE1F77171 /* Pods_CraftyMe.framework */,
+				52B139562806ECEF00FF08B2 /* WidgetKit.framework */,
+				52B139582806ECEF00FF08B2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,7 +162,9 @@
 		520F5A412749A84900677E02 = {
 			isa = PBXGroup;
 			children = (
+				52B1396A2806ED5F00FF08B2 /* AddArtworkWidgetExtension.entitlements */,
 				520F5A4C2749A84900677E02 /* CraftyMe */,
+				52B1395A2806ECEF00FF08B2 /* AddArtworkWidget */,
 				520F5A4B2749A84900677E02 /* Products */,
 				A8A77792A3966676CA53BF53 /* Pods */,
 				2B449F01CAA69283467E1670 /* Frameworks */,
@@ -122,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				520F5A4A2749A84900677E02 /* CraftyMe.app */,
+				52B139552806ECEF00FF08B2 /* AddArtworkWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +183,7 @@
 		520F5A4C2749A84900677E02 /* CraftyMe */ = {
 			isa = PBXGroup;
 			children = (
+				52B139502806EC6800FF08B2 /* CraftyMe.entitlements */,
 				526079D527534EE000C63091 /* AppDelegate */,
 				521A9D3327516AE30013A864 /* Models */,
 				521A9D3227516A4E0013A864 /* Helpers */,
@@ -264,6 +319,17 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		52B1395A2806ECEF00FF08B2 /* AddArtworkWidget */ = {
+			isa = PBXGroup;
+			children = (
+				52B1395B2806ECEF00FF08B2 /* AddArtworkWidget.swift */,
+				52B1395D2806ECEF00FF08B2 /* AddArtworkWidget.intentdefinition */,
+				52B1395E2806ECF000FF08B2 /* Assets.xcassets */,
+				52B139602806ECF000FF08B2 /* Info.plist */,
+			);
+			path = AddArtworkWidget;
+			sourceTree = "<group>";
+		};
 		52C1F7EF275FD9660017A5FE /* NSDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,15 +369,34 @@
 				520F5A472749A84900677E02 /* Frameworks */,
 				520F5A482749A84900677E02 /* Resources */,
 				3E154E08A776972D41BF026A /* [CP] Embed Pods Frameworks */,
+				52B139692806ECF000FF08B2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				52B139642806ECF000FF08B2 /* PBXTargetDependency */,
 			);
 			name = CraftyMe;
 			productName = CraftyMe;
 			productReference = 520F5A4A2749A84900677E02 /* CraftyMe.app */;
 			productType = "com.apple.product-type.application";
+		};
+		52B139542806ECEF00FF08B2 /* AddArtworkWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B139662806ECF000FF08B2 /* Build configuration list for PBXNativeTarget "AddArtworkWidgetExtension" */;
+			buildPhases = (
+				52B139512806ECEF00FF08B2 /* Sources */,
+				52B139522806ECEF00FF08B2 /* Frameworks */,
+				52B139532806ECEF00FF08B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AddArtworkWidgetExtension;
+			productName = AddArtworkWidgetExtension;
+			productReference = 52B139552806ECEF00FF08B2 /* AddArtworkWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -324,6 +409,9 @@
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					520F5A492749A84900677E02 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					52B139542806ECEF00FF08B2 = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
@@ -342,6 +430,7 @@
 			projectRoot = "";
 			targets = (
 				520F5A492749A84900677E02 /* CraftyMe */,
+				52B139542806ECEF00FF08B2 /* AddArtworkWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +445,14 @@
 				526FC84E2754472200D5D46B /* GoogleService-Info.plist in Resources */,
 				52F3F38D275311E000E6BA18 /* HomeTableViewCell.xib in Resources */,
 				520F5A552749A84900677E02 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B139532806ECEF00FF08B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B1395F2806ECF000FF08B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C1F7F2275FD9660017A5FE /* Date+Additions.swift in Sources */,
+				52B139622806ECF000FF08B2 /* AddArtworkWidget.intentdefinition in Sources */,
 				52C1F7F3275FD9660017A5FE /* NSDate+Formatters.swift in Sources */,
 				526079D727534EF000C63091 /* AppDelegate + Additions.swift in Sources */,
 				521304B1275184020075540C /* DUNavigationController.swift in Sources */,
@@ -441,7 +539,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B139512806ECEF00FF08B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B1395C2806ECEF00FF08B2 /* AddArtworkWidget.swift in Sources */,
+				52B139612806ECF000FF08B2 /* AddArtworkWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52B139642806ECF000FF08B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B139542806ECEF00FF08B2 /* AddArtworkWidgetExtension */;
+			targetProxy = 52B139632806ECF000FF08B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		520F5A532749A84900677E02 /* Main.storyboard */ = {
@@ -583,8 +698,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B0AD373EA53807706D6133E /* Pods-CraftyMe.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CraftyMe/CraftyMe.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -615,8 +732,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB9ACC75BEDBB75DAD214A06 /* Pods-CraftyMe.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CraftyMe/CraftyMe.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -643,6 +762,66 @@
 			};
 			name = Release;
 		};
+		52B139672806ECF000FF08B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AddArtworkWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 83DJL7X36B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AddArtworkWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AddArtworkWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.CraftyMe.AddArtworkWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		52B139682806ECF000FF08B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AddArtworkWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 83DJL7X36B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AddArtworkWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AddArtworkWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.CraftyMe.AddArtworkWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -660,6 +839,15 @@
 			buildConfigurations = (
 				520F5A5F2749A84C00677E02 /* Debug */,
 				520F5A602749A84C00677E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B139662806ECF000FF08B2 /* Build configuration list for PBXNativeTarget "AddArtworkWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B139672806ECF000FF08B2 /* Debug */,
+				52B139682806ECF000FF08B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
